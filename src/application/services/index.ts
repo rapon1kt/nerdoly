@@ -1,1 +1,1 @@
-export type { default as RegisterUserService } from "./RegisterUserService";
+export { default as RegisterUserService } from "./RegisterUserService";
