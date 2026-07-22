@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@theme inline {
+    --font-baloo: var(--font-baloo);
+    --color-ink: #1a1a1a;
+    --color-paper: #fff9e9;
+    --color-card: #ffffff;
+    --color-pinkcard: #ff3d81;
+    --color-lime: #b6e44d;
+    --color-line: #e9e2cc;
+    --shadow-main: 3px 3px 0 var(--color-ink);
+    --shadow-maincard: 6px 6px 0 var(--color-ink);
+    --animate-fade-scale: fade-scale 0.25s ease-out forwards;
+}
+
+@keyframes fade-scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
