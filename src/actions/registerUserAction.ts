@@ -4,9 +4,9 @@ import { registerSchema } from "@/domain/validators/auth";
 import { makeRegisterUser } from "@/application/factories";
 
 type Properties = {
-  name?: { errors: string[] };
   email?: { errors: string[] };
   password?: { errors: string[] };
+  confirmPassword?: { errors: string[] };
 };
 
 type RegisterUserState = {
@@ -22,9 +22,9 @@ export default async function registerUserAction(
   formData: FormData,
 ): RegisterUserResponse {
   const rawData = {
-    name: formData.get("name"),
     email: formData.get("email"),
     password: formData.get("password"),
+    confirmPassowrd: formData.get("confirmPassword"),
   };
 
   const validatedFields = registerSchema.safeParse(rawData);
@@ -38,11 +38,10 @@ export default async function registerUserAction(
   }
 
   try {
-    const { name, email, password } = validatedFields.data;
+    const { email, password } = validatedFields.data;
 
     const registerUserService = makeRegisterUser();
     const newUser = await registerUserService.execute({
-      name,
       email,
       password,
     });
