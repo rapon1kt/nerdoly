@@ -24,7 +24,7 @@ export default async function registerUserAction(
   const rawData = {
     email: formData.get("email"),
     password: formData.get("password"),
-    confirmPassowrd: formData.get("confirmPassword"),
+    confirmPassword: formData.get("confirmPassword"),
   };
 
   const validatedFields = registerSchema.safeParse(rawData);
