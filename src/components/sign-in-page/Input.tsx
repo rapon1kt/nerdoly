@@ -143,6 +143,7 @@ export function Input({
         </span>
         <div className="relative w-full group">
           <input
+            name="confirmPassword"
             type={showConfirmPassword ? "text" : "password"}
             onFocus={handlePasswordFocus}
             onBlur={handlePasswordBlur}
@@ -199,6 +200,11 @@ export function Input({
             )}
           </button>
         </div>
+        {state.errors?.confirmPassword?.errors && (
+          <span className="text-red-500 text-xs mt-1 font-semibold">
+            {state.errors.confirmPassword.errors[0]}
+          </span>
+        )}
       </div>
       <CustomButton
         type="submit"
