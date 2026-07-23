@@ -1,35 +1,20 @@
 "use client";
 
-import NavBar from "@/components/NavBar";
-import { Cards } from "@/components/Cards";
-import Mascot from "@/components/Mascot";
-import CustomButton from "@/components/CustomButton";
-import RoleCard from "@/components/RoleCard";
-import Faq from "@/components/Faq";
-import Cta from "@/components/Cta";
-import Footer from "@/components/Footer";
-import { useState, useEffect } from "react";
+import {
+  NavBar,
+  Cards,
+  RoleCard,
+  Faq,
+  Cta,
+  CustomButton,
+  Footer,
+} from "@/components/landingpage";
+
+import { Mascot } from "@/components";
 
 export default function Home() {
-  const [phraseIndex, setPhraseIndex] = useState(0);
-
-  const phrases = [
-    "Oi! Pronto para virar um nerd de verdade?",
-    "Bora fazer o diagnóstico?",
-    "Seus rascunhos podem ajudar alguém!",
-    "A IA tá de olho, sem julgar!",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    }, 3200);
-
-    return () => clearInterval(interval);
-  }, [phrases.length]);
-
   return (
-    <div className="flex flex-col items-center min-h-screen font-baloo">
+    <div className="flex flex-col items-center min-h-screen font-baloo background">
       <NavBar />
       <div className="flex">
         <div className="w-full flex pt-22 mr-41 flex-col">
@@ -42,20 +27,17 @@ export default function Home() {
             outros nerds e deixa nossa IA montar sua trilha. Professor também tá
             de olho pra garantir que nada de errado passe.
           </span>
-          <CustomButton text="Começar →" />
+          <CustomButton
+            text="Começar →"
+            className="w-40 mb-4 bg-pinkcard text-white"
+          />
           <span className="text-[#40322C]">
             Sem cartão, sem enrolação, só{" "}
             <span className="underline text-pinkcard">nerdice</span>
           </span>
         </div>
-
-        <div className="flex flex-col items-center justify-center relative w-full max-w-[280px] pt-14">
-          <div className="relative bg-white border-[2.5px] border-[#1A1A1A] rounded-2xl px-4 font-baloo font-bold text-sm text-center mb-4 h-[64px] flex items-center justify-center w-full transition-opacity duration-300">
-            {phrases[phraseIndex]}
-            <div className="absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-r-[10px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#1A1A1A]"></div>
-            <div className="absolute -bottom-[9px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[10px] border-l-transparent border-r-transparent border-t-white z-10"></div>
-          </div>
-          <Mascot />
+        <div className="mt-20 w-70">
+          <Mascot className="w-100 h-60" />
         </div>
       </div>
       <Cards />
