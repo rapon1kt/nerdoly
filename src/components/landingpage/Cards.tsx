@@ -1,4 +1,4 @@
-export function Cards() {
+export default function Cards() {
   return (
     <div className="flex flex-col items-center mt-22">
       <span className="px-3.5 py-0.5 bg-pinkcard rounded-full text-center border-ink border-2 text-white mb-6">

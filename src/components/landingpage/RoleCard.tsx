@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CustomButton from "./CustomButton";
 
 export default function RoleCard() {
   const [role, setRole] = useState("aluno");
@@ -92,13 +93,10 @@ export default function RoleCard() {
             )}
           </div>
         </ul>
-        <button
-          className="mt-6 px-3 py-1 text-center bg-pinkcard rounded-full border-ink shadow-main border-2 text-white transition-all duration-150 ease-out
-        hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#1A1A1A]
-        active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0_#1A1A1A] cursor-pointer"
-        >
-          Entrar como {role} →
-        </button>
+        <CustomButton
+          text={`Entrar como ${role} →`}
+          className="w-52 mt-5 px-1 bg-pinkcard text-white"
+        />
       </div>
     </div>
   );

@@ -10,8 +10,8 @@ export default function NavBar() {
           </span>
         </div>
         <div className="flex gap-4 text-white font-semibold">
-          <CustomButton text="Sobre" />
-          <CustomButton text="Entrar" />
+          <CustomButton text="Sobre" className="w-34 bg-pinkcard" />
+          <CustomButton text="Entrar" className="w-34 bg-pinkcard" />
         </div>
       </nav>
     </div>
