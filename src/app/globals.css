@@ -11,6 +11,7 @@
     --shadow-main: 3px 3px 0 var(--color-ink);
     --shadow-maincard: 6px 6px 0 var(--color-ink);
     --animate-fade-scale: fade-scale 0.25s ease-out forwards;
+    --animate-pop: pop 0.2s ease-out;
 }
 
 @keyframes fade-scale {
@@ -22,4 +23,32 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.background {
+    background-color: #fff9e9;
+    background-image:
+        linear-gradient(#e9e2cc 1px, transparent 1px),
+        linear-gradient(90deg, #e9e2cc 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.login-background {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.18) 2px,
+        transparent 2px
+    );
+    background-size: 22px 22px;
 }
