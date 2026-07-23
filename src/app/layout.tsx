@@ -20,14 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${baloo.variable}
-        min-h-screen bg-[#FFF9E9]
-        bg-[image:linear-gradient(#E9E2CC_1px,transparent_1px),linear-gradient(90deg,#E9E2CC_1px,transparent_1px)]
-        bg-[size:28px_28px]`}
-      >
-        {children}
-      </body>
+      <body className={`${baloo.variable} min-h-screen`}>{children}</body>
     </html>
   );
 }
